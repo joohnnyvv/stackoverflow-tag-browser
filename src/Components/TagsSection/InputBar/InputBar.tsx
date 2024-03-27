@@ -6,10 +6,10 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import { numberOfElementsOnPage } from "../../Constants/NumberOfElementsOptions";
+import { numberOfElementsOnPage } from "../../../Constants/NumberOfElementsOptions";
 import { useAtom } from "jotai";
-import { numberOfItemsAtom } from "../../lib/numberOfItemsAtom";
-import { tagNameQueryAtom } from "../../lib/tagNameQueryAtom";
+import { numberOfItemsAtom } from "../../../lib/numberOfItemsAtom";
+import { tagNameQueryAtom } from "../../../lib/tagNameQueryAtom";
 import { debounce } from "lodash";
 
 function InputBar() {
