@@ -1,5 +1,5 @@
-import {atom} from "jotai";
-import {PaletteMode} from "@mui/material";
+import { atom } from "jotai";
+import axios from "axios";
+import { PaletteMode } from "@mui/material";
 
-// @ts-ignore
-export const themeAtom = atom<PaletteMode | undefined>("light")
+export const themeAtom = atom<PaletteMode | undefined>("light");
