@@ -22,7 +22,7 @@ function App(): React.JSX.Element {
         <TopBar />
         <Container
           maxWidth={"md"}
-          sx={{ display: "flex", justifyContent: "space-between", mt: "20px" }}
+          sx={{ display: "flex", justifyContent: "space-between", mt: "30px" }}
         >
           <InputBar />
         </Container>

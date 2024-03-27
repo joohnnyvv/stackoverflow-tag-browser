@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -42,7 +42,7 @@ function TopBar() {
           </Box>
           <Box sx={{ display: "flex" }}>
             <FormControl>
-              <ThemeSwitch onChange={(e) => toggleTheme()} />
+              <ThemeSwitch onChange={() => toggleTheme()} />
             </FormControl>
           </Box>
         </Toolbar>
