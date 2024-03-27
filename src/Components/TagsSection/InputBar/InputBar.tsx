@@ -14,7 +14,7 @@ import { debounce } from "lodash";
 
 function InputBar() {
   const [numberOfItems, setNumberOfItems] = useAtom(numberOfItemsAtom);
-  const [tagNameQuery, setTagNameQuery] = useAtom(tagNameQueryAtom);
+  const [, setTagNameQuery] = useAtom(tagNameQueryAtom);
 
   const handleNumberOfItemsSelect = (e: SelectChangeEvent<number>) => {
     setNumberOfItems(e.target.value as number);
@@ -30,16 +30,16 @@ function InputBar() {
   return (
     <>
       <TextField
-        id="outlined-basic"
+        id="tag-name-input"
         label="Tag name"
         variant="outlined"
         onChange={(e) => handleQueryChange(e)}
       />
       <FormControl sx={{ width: "120px" }}>
-        <InputLabel id="demo-simple-select-label">Results</InputLabel>
+        <InputLabel id="results-label">Results</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          labelId="results-label"
+          id="results-input"
           value={numberOfItems}
           label="Results"
           onChange={(e) => handleNumberOfItemsSelect(e)}
