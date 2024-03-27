@@ -22,7 +22,7 @@ function InputBar() {
 
   const handleQueryChange = debounce(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setTagNameQuery(e.target.value as string);
+      setTagNameQuery(e.target.value.toLowerCase());
     },
     500,
   );

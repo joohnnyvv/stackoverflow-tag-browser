@@ -118,43 +118,52 @@ function TagsTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {isLoading
-              ? Array.from(new Array(numberOfItems)).map((_, index) => (
-                  <TableRow key={index}>
-                    <TableCell>
-                      <Skeleton variant="text" />
-                    </TableCell>
-                    <TableCell>
-                      <Skeleton variant="text" />
-                    </TableCell>
-                    <TableCell>
-                      <Skeleton variant="text" />
-                    </TableCell>
-                  </TableRow>
-                ))
-              : tags?.items.map((tag, index) => (
-                  <TableRow
-                    key={tag.name}
-                    sx={{
-                      "&:hover": {
-                        cursor: "pointer",
-                        backgroundColor:
-                          theme === "light" ? "#b0bec5" : "#263238",
-                      },
-                    }}
-                    onClick={() =>
-                      handleRowClick(
-                        `https://stackoverflow.com/questions/tagged/${encodeURIComponent(tag.name)}`,
-                      )
-                    }
-                  >
-                    <TableCell align={"left"}>
-                      {index + 1 + (currentPage - 1) * numberOfItems}
-                    </TableCell>
-                    <TableCell align={"left"}>{tag.name}</TableCell>
-                    <TableCell align={"right"}>{tag.count}</TableCell>
-                  </TableRow>
-                ))}
+            {isLoading ? (
+              // Loading Skeleton State
+              Array.from(new Array(numberOfItems)).map((_, index) => (
+                <TableRow key={index}>
+                  <TableCell>
+                    <Skeleton variant="text" />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" />
+                  </TableCell>
+                </TableRow>
+              ))
+            ) : tags && tags.items && tags.items.length > 0 ? (
+              tags.items.map((tag, index) => (
+                <TableRow
+                  key={tag.name}
+                  sx={{
+                    "&:hover": {
+                      cursor: "pointer",
+                      backgroundColor:
+                        theme === "light" ? "#b0bec5" : "#263238",
+                    },
+                  }}
+                  onClick={() =>
+                    handleRowClick(
+                      `https://stackoverflow.com/questions/tagged/${encodeURIComponent(tag.name)}`,
+                    )
+                  }
+                >
+                  <TableCell align={"left"}>
+                    {index + 1 + (currentPage - 1) * numberOfItems}
+                  </TableCell>
+                  <TableCell align={"left"}>{tag.name}</TableCell>
+                  <TableCell align={"right"}>{tag.count}</TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={3} align="center">
+                  No tags found.
+                </TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </TableContainer>

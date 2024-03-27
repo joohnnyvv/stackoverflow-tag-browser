@@ -20,7 +20,12 @@ function NavButtons() {
   return (
     <Container
       maxWidth={"xs"}
-      sx={{ display: "flex", justifyContent: "space-evenly", mt: "60px" }}
+      sx={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        mb: "60px",
+        mt: "20px",
+      }}
     >
       <IconButton
         onClick={handlePreviousPageClick}
