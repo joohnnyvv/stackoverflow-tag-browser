@@ -6,12 +6,12 @@ interface ColumnConfig {
 }
 
 export const columns: ColumnConfig[] = [
-  { colName: "#", align: "left", width: "25%" },
-  { colName: "Tag Name", colSortType: "name", align: "left", width: "25%" },
+  { colName: "#", align: "left", width: "20%" },
+  { colName: "Tag Name", colSortType: "name", align: "left", width: "30%" },
   {
     colName: "Number of usages",
     colSortType: "popular",
     align: "right",
-    width: "50",
+    width: "50%",
   },
 ];

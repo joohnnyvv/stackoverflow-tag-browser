@@ -2,6 +2,7 @@ import Container from "@mui/material/Container";
 import InputBar from "./InputBar/InputBar";
 import TagsTable from "./TagsTable/TagsTable";
 import React from "react";
+import NavButtons from "./NavButtons/NavButtons";
 
 function TagsSection() {
   return (
@@ -13,6 +14,7 @@ function TagsSection() {
         <InputBar />
       </Container>
       <TagsTable />
+      <NavButtons />
     </>
   );
 }
