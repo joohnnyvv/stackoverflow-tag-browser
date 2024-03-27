@@ -7,6 +7,7 @@ import { themeAtom } from "./lib/themeAtom";
 import InputBar from "./Components/InputBar/InputBar";
 import Container from "@mui/material/Container";
 import { Paper } from "@mui/material";
+import TagsTable from "./Components/TagsTable/TagsTable";
 
 function App(): React.JSX.Element {
   const [themeMode] = useAtom(themeAtom);
@@ -26,6 +27,7 @@ function App(): React.JSX.Element {
         >
           <InputBar />
         </Container>
+        <TagsTable />
       </Paper>
     </ThemeProvider>
   );

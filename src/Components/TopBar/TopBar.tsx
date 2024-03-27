@@ -17,6 +17,7 @@ function TopBar() {
     const newTheme = themeMode === "light" ? "dark" : "light";
     setThemeMode(newTheme);
   };
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">

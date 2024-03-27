@@ -6,6 +6,7 @@ export interface StackTagsResponse {
 }
 
 export interface StackTag {
+  collectives?: [];
   has_synonyms: boolean;
   is_moderator_only: boolean;
   is_required: boolean;
