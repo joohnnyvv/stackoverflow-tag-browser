@@ -7,6 +7,7 @@ import { themeAtom } from "./lib/themeAtom";
 import { Alert, Paper } from "@mui/material";
 import TagsSection from "./Components/TagsSection/TagsSection";
 import { isNetworkErrorAtom } from "./lib/isNetworkErrorAtom";
+import InfoFooter from "./Components/InfoFooter/InfoFooter";
 
 function App(): React.JSX.Element {
   const [themeMode] = useAtom(themeAtom);
@@ -23,7 +24,9 @@ function App(): React.JSX.Element {
 
   return (
     <ThemeProvider theme={theme}>
-      <Paper style={{ height: "100vh", width: "100vw", overflowX: "hidden" }}>
+      <Paper
+        style={{ minHeight: "100vh", width: "100vw", overflowX: "hidden" }}
+      >
         <TopBar />
         {isNetworkError && (
           <Alert
@@ -36,6 +39,7 @@ function App(): React.JSX.Element {
           </Alert>
         )}
         <TagsSection />
+        <InfoFooter />
       </Paper>
     </ThemeProvider>
   );

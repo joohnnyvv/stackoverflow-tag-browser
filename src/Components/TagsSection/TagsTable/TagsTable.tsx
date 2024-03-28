@@ -84,7 +84,11 @@ function TagsTable() {
       }}
     >
       <TableContainer
-        sx={{ maxWidth: "600px", maxHeight: "440px", minHeight: "360px" }}
+        sx={{
+          maxWidth: "600px",
+          maxHeight: { xs: "400px", md: "460px" },
+          minHeight: "360px",
+        }}
       >
         <Table stickyHeader>
           <TableHead>
@@ -95,6 +99,7 @@ function TagsTable() {
                   sx={{
                     ...(column.colSortType ? { cursor: "pointer" } : {}),
                     width: column.width,
+                    backgroundColor: theme === "light" ? "#eeeeee" : "#212121",
                   }}
                   align={column.align}
                   onClick={() => {
@@ -141,8 +146,14 @@ function TagsTable() {
                     "&:hover": {
                       cursor: "pointer",
                       backgroundColor:
-                        theme === "light" ? "#b0bec5" : "#263238",
+                        theme === "light" ? "#b0bec5" : "#424242",
                     },
+                    backgroundColor:
+                      index % 2 !== 0
+                        ? theme === "light"
+                          ? "#eeeeee"
+                          : "#212121"
+                        : "transparent",
                   }}
                   onClick={() =>
                     handleRowClick(
