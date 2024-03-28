@@ -1,16 +1,11 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  TextField,
-} from "@mui/material";
-import { numberOfElementsOnPage } from "../../../Constants/NumberOfElementsOptions";
+import { FormControl, MenuItem, SelectChangeEvent } from "@mui/material";
 import { useAtom } from "jotai";
 import { numberOfItemsAtom } from "../../../lib/numberOfItemsAtom";
 import { tagNameQueryAtom } from "../../../lib/tagNameQueryAtom";
 import { debounce } from "lodash";
+import TagNameInput from "./Inputs/TagNameInput";
+import NumberOfResultsInput from "./Inputs/NumberOfResultsInput";
+import { numberOfElementsOnPage } from "../../../Constants/NumberOfElementsOptions";
 
 function InputBar() {
   const [numberOfItems, setNumberOfItems] = useAtom(numberOfItemsAtom);
@@ -29,27 +24,19 @@ function InputBar() {
 
   return (
     <>
-      <TextField
-        id="tag-name-input"
-        label="Tag name"
-        variant="outlined"
-        onChange={(e) => handleQueryChange(e)}
-      />
+      <TagNameInput label="Tag Name" onChange={(e) => handleQueryChange(e)} />
       <FormControl sx={{ width: "120px" }}>
-        <InputLabel id="results-label">Results</InputLabel>
-        <Select
-          labelId="results-label"
-          id="results-input"
+        <NumberOfResultsInput
           value={numberOfItems}
-          label="Results"
           onChange={(e) => handleNumberOfItemsSelect(e)}
-        >
-          {numberOfElementsOnPage.map((number) => (
+          mapFunction={(number) => (
             <MenuItem key={number} value={number}>
               {number}
             </MenuItem>
-          ))}
-        </Select>
+          )}
+          label="Results"
+          numberOfElementsOnPage={numberOfElementsOnPage}
+        />
       </FormControl>
     </>
   );

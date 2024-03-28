@@ -124,7 +124,6 @@ function TagsTable() {
           </TableHead>
           <TableBody>
             {isLoading ? (
-              // Loading Skeleton State
               Array.from(new Array(numberOfItems)).map((_, index) => (
                 <TableRow key={index}>
                   <TableCell>
