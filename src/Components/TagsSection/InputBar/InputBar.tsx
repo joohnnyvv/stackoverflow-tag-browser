@@ -17,7 +17,7 @@ function InputBar() {
 
   const handleQueryChange = debounce(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setTagNameQuery(e.target.value.toLowerCase());
+      setTagNameQuery(e.target.value.toLowerCase().replace(/ /g, ""));
     },
     500,
   );

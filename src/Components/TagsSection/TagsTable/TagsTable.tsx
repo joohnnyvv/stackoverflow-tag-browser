@@ -99,7 +99,8 @@ function TagsTable() {
                   sx={{
                     ...(column.colSortType ? { cursor: "pointer" } : {}),
                     width: column.width,
-                    backgroundColor: theme === "light" ? "#eeeeee" : "#212121",
+                    backgroundColor: theme === "light" ? "#1976d2" : "#212121",
+                    color: "white",
                   }}
                   align={column.align}
                   onClick={() => {
@@ -150,7 +151,7 @@ function TagsTable() {
                     backgroundColor:
                       index % 2 !== 0
                         ? theme === "light"
-                          ? "#eeeeee"
+                          ? "#cfd8dc"
                           : "#212121"
                         : "transparent",
                   }}

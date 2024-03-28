@@ -23,7 +23,7 @@ function NavButtons() {
       sx={{
         display: "flex",
         justifyContent: "space-evenly",
-        mb: "60px",
+        mb: 0,
         mt: "20px",
       }}
     >
