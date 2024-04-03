@@ -113,7 +113,7 @@ function TagsCardsContainer() {
       sx={{
         display: "flex",
         justifyContent: "center",
-        mt: "50px",
+        mt: { md: "50px", xs: "20px" },
         alignItems: "center",
       }}
     >
@@ -124,24 +124,17 @@ function TagsCardsContainer() {
           columns={{ xs: 2, sm: 8, md: 12 }}
           justifyContent="center"
         >
-          <Grid
-            container
-            spacing={{ xs: 2, md: 3 }}
-            columns={{ xs: 2, sm: 8, md: 12 }}
-            justifyContent="center"
-          >
-            {isLoading
-              ? Array.from({ length: numberOfItems }).map((_, index) => (
-                  <Grid item xs={2} sm={3} md={3} key={index}>
-                    <PlaceholderCard />
-                  </Grid>
-                ))
-              : tags?.items.map((tag) => (
-                  <Grid item xs={2} sm={3} md={3} key={tag.name}>
-                    <TagCard tag={tag} />
-                  </Grid>
-                ))}
-          </Grid>
+          {isLoading
+            ? Array.from({ length: numberOfItems }).map((_, index) => (
+                <Grid item xs={2} sm={3} md={3} key={index}>
+                  <PlaceholderCard />
+                </Grid>
+              ))
+            : tags?.items.map((tag) => (
+                <Grid item xs={2} sm={3} md={3} key={tag.name}>
+                  <TagCard tag={tag} />
+                </Grid>
+              ))}
         </Grid>
       ) : (
         <Typography variant={"h4"}>No tags found</Typography>
