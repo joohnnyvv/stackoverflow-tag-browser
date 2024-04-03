@@ -16,6 +16,7 @@ import { sortSettingsAtom } from "../../../lib/sortingAtom";
 import TagCard from "./TagCard";
 import { Grid } from "@mui/material";
 import PlaceholderCard from "./PlaceholderCard";
+import Typography from "@mui/material/Typography";
 
 function TagsCardsContainer() {
   const [sortSettings] = useAtom(sortSettingsAtom);
@@ -116,31 +117,35 @@ function TagsCardsContainer() {
         alignItems: "center",
       }}
     >
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 2, sm: 8, md: 12 }}
-        justifyContent="center"
-      >
+      {tags?.items.length !== 0 ? (
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 2, sm: 8, md: 12 }}
           justifyContent="center"
         >
-          {isLoading
-            ? Array.from({ length: numberOfItems }).map((_, index) => (
-                <Grid item xs={2} sm={3} md={3} key={index}>
-                  <PlaceholderCard />
-                </Grid>
-              ))
-            : tags?.items.map((tag) => (
-                <Grid item xs={2} sm={3} md={3} key={tag.name}>
-                  <TagCard tag={tag} />
-                </Grid>
-              ))}
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 2, sm: 8, md: 12 }}
+            justifyContent="center"
+          >
+            {isLoading
+              ? Array.from({ length: numberOfItems }).map((_, index) => (
+                  <Grid item xs={2} sm={3} md={3} key={index}>
+                    <PlaceholderCard />
+                  </Grid>
+                ))
+              : tags?.items.map((tag) => (
+                  <Grid item xs={2} sm={3} md={3} key={tag.name}>
+                    <TagCard tag={tag} />
+                  </Grid>
+                ))}
+          </Grid>
         </Grid>
-      </Grid>
+      ) : (
+        <Typography variant={"h4"}>No tags found</Typography>
+      )}
     </Box>
   );
 }
