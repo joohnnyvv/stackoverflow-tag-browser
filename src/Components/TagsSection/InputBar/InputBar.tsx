@@ -1,11 +1,4 @@
-import {
-  FormControl,
-  InputLabel,
-  ListSubheader,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from "@mui/material";
+import { FormControl, MenuItem, SelectChangeEvent } from "@mui/material";
 import { useAtom } from "jotai";
 import { numberOfItemsAtom } from "../../../lib/numberOfItemsAtom";
 import { tagNameQueryAtom } from "../../../lib/tagNameQueryAtom";
@@ -14,11 +7,9 @@ import TagNameInput from "./Inputs/TagNameInput";
 import NumberOfResultsInput from "./Inputs/NumberOfResultsInput";
 import { numberOfElementsOnPage } from "../../../Constants/NumberOfElementsOptions";
 import { sortSettingsAtom } from "../../../lib/sortingAtom";
-import StarIcon from "@mui/icons-material/Star";
-import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { SortOptions } from "../../../Models/SortingSettings";
-import { sortOptions } from "../../../Constants/SortOptions";
 import Container from "@mui/material/Container";
+import { SortingSelect } from "./Inputs/SortingSelect";
 
 function InputBar() {
   const [numberOfItems, setNumberOfItems] = useAtom(numberOfItemsAtom);
@@ -67,48 +58,10 @@ function InputBar() {
           />{" "}
         </FormControl>
       </Container>
-      <FormControl>
-        <InputLabel id="sort-by-select-label">Sort By</InputLabel>
-        <Select
-          autoWidth={true}
-          labelId="sort-by-select-label"
-          id="sort-by-select"
-          value={sortSettings}
-          label="Sort by"
-          onChange={(e) => handleSortingSettingsChange(e)}
-        >
-          <ListSubheader
-            sx={{
-              display: "flex",
-              gap: 1,
-              alignItems: "center",
-            }}
-          >
-            <LocalOfferIcon fontSize={"small"} />
-            Sort By Name
-          </ListSubheader>
-          <MenuItem value={sortOptions.nameAscending}>Sort Ascending</MenuItem>
-          <MenuItem value={sortOptions.nameDescending}>
-            Sort Descending
-          </MenuItem>
-          <ListSubheader
-            sx={{
-              display: "flex",
-              gap: 1,
-              alignItems: "center",
-            }}
-          >
-            <StarIcon fontSize={"small"} />
-            Sort By Popularity
-          </ListSubheader>
-          <MenuItem value={sortOptions.popularAscending}>
-            Sort Ascending
-          </MenuItem>
-          <MenuItem value={sortOptions.popularDescending}>
-            Sort Descending
-          </MenuItem>
-        </Select>
-      </FormControl>
+      <SortingSelect
+        value={sortSettings}
+        onChange={(e) => handleSortingSettingsChange(e)}
+      />
     </Container>
   );
 }

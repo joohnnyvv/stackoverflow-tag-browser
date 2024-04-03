@@ -6,7 +6,7 @@ import { themeAtom } from "../../../lib/themeAtom";
 import { Paper } from "@mui/material";
 
 export default {
-  title: "Tags Section/Tags Table",
+  title: "Tags Section/Tags Section",
   component: TagsCardsContainer,
   argTypes: {
     theme: {
