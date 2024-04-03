@@ -19,7 +19,7 @@ function TopBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>

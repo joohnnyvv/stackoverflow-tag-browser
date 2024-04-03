@@ -13,19 +13,19 @@ The application is a tag search engine provided by the [StackOverflow API](https
 - Number of related posts:
     - For each tag, the number of questions to which it is related is displayed.
 
-![img.png](readme_screenshots/img2.png)
+![img_1.png](readme_screenshots/img_1.png)
 - Configurable number of items per page:
     - The user can choose how many tags to display per page.
 
-![img.png](readme_screenshots/img3.png)
+![img_2.png](readme_screenshots/img_2.png)
 - Choice of sorting field and direction:
     - The user can sort tags by tag name and number of related questions
 
-![img.png](readme_screenshots/img4.png)
+![img_3.png](readme_screenshots/img_3.png)
 - Data loading and error states:
     - The application displays appropriate messages when loading data or when errors occur.
 
-![img.png](readme_screenshots/img5.png)
+![img_4.png](readme_screenshots/img_4.png)
 - Use of UI component library:
     - The application uses the [MUI](https://mui.com/) library to create the user interface.
 - Use of libraries for state management and data retrieval:

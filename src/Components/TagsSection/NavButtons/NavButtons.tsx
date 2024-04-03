@@ -24,7 +24,7 @@ function NavButtons() {
         display: "flex",
         justifyContent: "space-evenly",
         mb: 0,
-        mt: "20px",
+        mt: "40px",
       }}
     >
       <IconButton

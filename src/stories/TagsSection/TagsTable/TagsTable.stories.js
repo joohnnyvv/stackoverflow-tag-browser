@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import TagsTable from "../../../Components/TagsSection/TagsTable/TagsTable";
+import TagsCardsContainer from "../../../Components/TagsSection/TagsCards/TagsCardsContainer";
 import { useAtom } from "jotai";
 import { themeAtom } from "../../../lib/themeAtom";
 import { Paper } from "@mui/material";
 
 export default {
   title: "Tags Section/Tags Table",
-  component: TagsTable,
+  component: TagsCardsContainer,
   argTypes: {
     theme: {
       table: {
@@ -31,7 +31,7 @@ const Template = (args) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Paper elevation={0}>
-        <TagsTable isLoading={args.isLoading} />
+        <TagsCardsContainer isLoading={args.isLoading} />
       </Paper>
     </ThemeProvider>
   );

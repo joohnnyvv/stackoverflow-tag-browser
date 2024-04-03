@@ -26,7 +26,12 @@ function App(): React.JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <Paper
-        style={{ minHeight: "100vh", width: "100vw", overflowX: "hidden" }}
+        style={{
+          minHeight: "100vh",
+          width: "100%",
+          overflowX: "hidden",
+          paddingBottom: 24,
+        }}
         elevation={0}
       >
         <TopBar />
